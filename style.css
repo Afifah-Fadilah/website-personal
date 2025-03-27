@@ -1,0 +1,665 @@
+/*mendefinisikan variabel CSS global, untuk di panggil*/
+:root {
+    --primary:rgb(146, 0, 70); /*warna utama*/
+    --secondary: #ffdada; /*warna background, digunakan di nav dan kelas hobi*/
+    --text_p: #555; /*warna untuk teks paragraf*/
+
+}
+
+html { 
+    scroll-behavior: smooth; /* Membuat efek scroll yang halus */
+}
+section {
+    min-height: 85vh; /* 100% tinggi layar */
+    margin-top: 0;
+}
+
+
+body {
+    margin: 0; /* Menghilangkan margin default pada body */
+    font-family: Helvetica, sans-serif; /* Mengatur font utama */
+    background-color: #f5f5f5; /* Mengatur warna background web */
+    overflow-x: hidden; /* Menghindari scroll horizontal */
+
+}
+
+/* Navbar */
+.nav {
+    display: flex; /* Mengatur navbar dalam bentuk flexbox agar sebaris */
+    align-items: center; /* agar teks berada di tengah nav */
+    padding: 15px 25px; /* mengatur ukuran ketebalan nav */
+    background-color: var(--secondary); /* memanggil warna secondary untuk bg di nav */
+    position: fixed; /* Membuat navbar tetap di atas walaupun halaman di scrol ke bawah */
+    width: 100%; /* Agar navbar menyesuaikan lebar layar */
+    z-index: 1000; /* Pastikan navbar selalu di depan */
+    box-shadow: 0px 2px 20px rgba(78, 78, 78, 0.2); /* Tambahkan shadow */
+}
+
+/* Mengatur logo yang berada di tepi kanan nav(bagian apipah) */
+.logo {
+    font-size: 24px; /* Mengatur ukuran font */
+    font-weight: bold; /* Mengatur ketebalan font*/
+    color: var(--primary); /* Mengambil warna primary untuk logo */
+    font-style: italic; /* Mengatur font agar italic */
+    text-shadow: 2px 3px 4px rgb(255, 255, 255); /* Tambahkan shadow pada text 'Apipah'*/
+
+}
+
+/* Mengatur logo yang berada di tepi kanan nav(bagian web) */
+.logo span {
+    font-style: italic; /* Mengatur font agar italic */
+    color: rgb(255, 255, 255); /* Mengatur warna pada teks */
+    padding: 5px; /* Mengatur jarak antar logo (bagian apipah dan web) */
+    text-shadow: 2px 3px 8px var(--primary); /* Tambahkan shadow untuk text 'Web' */
+}
+
+/* Bungkus link dengan div agar bisa rata kanan */
+.nav-links {
+    display: flex; /* Menyusun link secara horizontal */
+    margin-left: auto; /* Mendorong teks ke kanan */
+    padding-right: 45px; /* Memberikan jarak dari tepi kanan */
+    font-weight: 550; /* Memberikan ketebalan pada teks*/
+}
+
+.nav-link { 
+    color: var(--primary); /* Memanggil warna untuk dipakai di teks navlink */
+    text-decoration: none; /* Menghilangkan garis bawah pada teks navlink */
+    margin: 0 15px; /* Memberikan jarak antar teks navlink */
+}
+
+.nav-link:hover{
+    text-decoration: underline; /* Menambahkan garis bawah saat hover(mouse di arahkan pada navlink) */
+}
+
+.list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Jarak antar item */
+    font-weight: 600;
+}
+
+/* Animasi fade-in dan slide-up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Menyembunyikan elemen sebelum animasi dimulai */
+.list-item1, .list-item2, .list-item3 {
+    opacity: 0;
+}
+
+.list-item1 {
+    background: #ffdada;
+    padding: 10px 20px;
+    border-radius: 100px;
+    box-shadow: 2px 2px 5px rgba(68, 68, 68, 0.1);
+    transition: 0.3s;
+    
+}
+
+.list-item2 {
+    background: #ffdada;
+    padding: 10px 20px;
+    border-radius: 100px;
+    box-shadow: 2px 2px 5px rgba(68, 68, 68, 0.1);
+    transition: 0.3s;
+    
+}
+
+.list-item3 {
+    background: #ffdada;
+    padding: 10px 20px;
+    border-radius: 100px;
+    box-shadow: 2px 2px 5px rgba(68, 68, 68, 0.1);
+    transition: 0.3s;
+    
+} 
+
+
+.list-item1:hover, .list-item2:hover, .list-item3:hover{
+    background-color: #ffb0b0;
+    transform: scale(1.05); /* Efek membesar sedikit saat hover */
+
+}
+
+
+/* Gambar Profil */
+.photo img {
+    width: 500px; /* Mengatur lebar gambar */
+    margin-top: 70px;
+    height: auto; /* Menyesuaikan tinggi secara proporsional */
+}
+
+/* Bagian Profil */
+.profile {
+    display: flex; /* Mengatur tata letak dalam bentuk flexbox agar mudah disesuaikan */
+    justify-content: space-between; /* Menyusun elemen di kiri & kanan */
+    align-items: center; /* Menengahkan elemen secara vertikal agar di bagian tengah*/
+    padding: 100px; /* Mengatur kelas profile untuk berada di tengah dari sisi kiri dan kanan*/
+    height: 75vh; /* Mengatur tinggi section 75% dari viewport */
+    padding-bottom: 50px;
+}
+
+/* Bagian Profil (text paragraf) */
+.bio {
+    color: var(--text_p); /* Mengambil warna dari var text_p untuk memberikan warna paragraf */
+    font-size: 18px; /* Mengatur ukuran teks paragraf */
+}
+
+
+.bio p {
+    margin-top: 30px;
+    line-height: 1.5; /* Mengatur spasi antar baris */
+    font-size: 17px; /* Mengatur ukuran font */
+    font-family: "Poppins"; /* Mengatur jenis font yaitu menggunakan poppins */
+    color: var(--text_p); /* Memanggil warna teks yaitu berwarna hitam keabu-abuan */
+}
+
+.bt-contact {
+    margin-top: 25px;
+    display: inline-flex; /* Pastikan ikon dan teks tetap dalam satu baris */
+    align-items: center; /* Sejajarkan teks dengan ikon */
+    justify-content: center;
+    gap: 10px; /* Jarak antara ikon dan teks */
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.bt-contact a{
+    color: white;
+    text-decoration: none;
+}
+
+.bt-contact img {
+    width: 24px; /* Ukuran ikon */
+    height: auto;
+}
+
+.bt-contact:hover {
+    background-color: rgb(200, 0, 90); /*Warnalebihgelapsaathover*/
+    transform: scale(1.05); /* Efek membesar sedikit saat hover */
+}
+
+.typing-text {
+    display: inline-block;
+    min-height: 1.2em; /* Sesuai tinggi teks */
+    white-space: nowrap; /* Agar teks tidak pindah baris */
+    overflow: hidden; /* Hindari lonjakan konten */
+    color: var(--primary);
+    text-shadow: 4px 4px 6px rgba(255, 162, 162, 0.5); /* Format yang benar */
+    font-size:xx-large;
+}
+
+.aboutme {
+    padding-top: 50px;
+    padding: 80px 100px;
+    background-color: var(--secondary);
+    text-align: center;
+
+}
+
+.aboutme h2 {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    max-width: 900px;
+    text-align:justify;
+    color: var(--text_p);
+    line-height: 1.5;
+}
+
+.about-text p {
+    font-size: 16px;
+}
+
+.about-text strong {
+    color: var(--primary);
+}
+
+.about-text a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-text a:hover {
+    text-decoration: underline;
+}
+
+.about-image img {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* SKILLS DESKTOP */
+.skillExpe {
+    max-width: 900px; /* Batasi lebar maksimum */
+    margin: 30px auto; /* Tengah dengan margin atas-bawah */
+    padding: 30px; /* Tambah padding agar lebih proporsional */
+    background-color: white; /* Pastikan background tetap putih */
+    border-radius: 20px; /* Opsional, buat sudut lebih halus */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan */
+    padding-bottom: 60px;
+}
+
+.skillExpe h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 30px;
+    color: var(--primary);
+}
+
+.skillExpe h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.container-image-skill {
+    width: 100%;
+    padding-bottom: 20px;
+    margin:  auto;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.field-image-skill {
+    position: relative;
+    background-color: var(--secondary);
+    width: 10%;
+    border: 2px solid var(--primary);
+    border-radius: 12px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.field-image-skill span {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: #ffb0b0;
+    color: rgb(63, 63, 63);
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 100px;
+    transform: scale(0, 1);
+    transform-origin: bottom;
+    transition: transform .5s;
+}
+
+.field-image-skill:hover span {
+    transform: scale(1);
+
+}
+
+.image-skill {
+    width: 50px;
+}
+
+/* PROJECT DESKTOP */
+.project {
+    padding: 80px 0;
+}
+
+.project h1 {
+    font-size: 60px;
+    text-align: center;
+    color: var(--primary);
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 40px;
+}
+
+.project h1 span {
+    color: white;
+}
+
+.container-project {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: 20px;
+    
+}
+
+.field-project {
+    width: 40%;
+    border-radius: 12px;
+    padding: 20px;
+    background-color: var(--primary);
+    border: 1px solid var(--secondary);
+    transition: transform .3s ease-in-out;
+    display: grid;
+    grid-auto-columns: 100%;
+    grid-auto-rows: max-content;
+    row-gap: 5px;
+    grid-template-areas: 'main-project' 'technology-project';
+    transition: transform .3s;
+    box-shadow: 2 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.field-project:hover {
+    transform: translateY(-10px);
+}
+
+.link-to-project {
+    grid-area: main-project;
+    display: flex;
+    gap: 16px;
+}
+
+.field-project img {
+    width: 100%; /* Pastikan gambar memenuhi lebar container */
+    height: 180px; /* Atur tinggi tetap agar semua gambar seragam */
+    object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+    border-radius: 10px; /* Agar sudutnya lebih halus */
+}
+
+.field-text-project {
+    width: 100%;
+    margin-top: 3px;
+}
+
+.field-text-project h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 19px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.field-text-project h3 span {
+    color: var(--secondary);
+}
+
+.description-project {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+    color: #d3d3d3;
+}
+
+.technology-project {
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+    
+}
+
+.technology-project a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: var(--secondary);
+    border: 2px solid #6d0722;
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 16px;
+}
+
+.technology-project a:hover {
+    cursor: pointer;
+}
+
+.halaman {
+    padding: 20px;
+    background-color: #f8f9fa;
+    margin-left: 16px;
+}
+
+.halaman h1 {
+    font-size: 30px;
+    text-align: center;
+    color: var(--primary);
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 40px;
+    margin-top: 50px;
+}
+
+.materi {
+    background: var(--secondary);
+    padding: 20px;
+    margin: 40px 0;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.materi h3 {
+    color: var(--primary);
+}
+
+.materi pre {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+/* ======= SECTION CONTACT ======= */
+.contact {
+    background-color: var(--secondary);
+    padding: 100px;
+    text-align: center;
+}
+
+.contact .container {
+    max-width: 550px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.contact p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* ======= FORM STYLING ======= */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact label {
+    text-align: left;
+    font-weight: bold;
+    color: #444;
+}
+
+.contact input, 
+.contact textarea {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact textarea {
+    resize: none; /* Mencegah textarea diubah ukurannya */
+}
+
+.contact button {
+    background-color: #c0667b;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: var(--primary);
+}
+
+.social-links { /* bagian kontak(ig, linkedin, github) */ 
+    display: flex; /* Mengatur tata letak dalam bentuk flexbox agar mudah disesuaikan */
+    justify-content: center; /* Mengatur tata letak agar berada di tengah */
+    gap: 40px; /* Mengatur jarak antar link sosial media */
+    margin-top: 20px; /* Mengatur tata letak agar berada di tengah */
+    text-decoration: none; /* menghapus garis bawah pada bagian teks link */
+}
+
+.social-links a {
+    text-decoration: none; /* menghapus garis bawah pada bagian teks link */
+    color: var(--primary); /* Mengambil var warna primary untuk memberi warna teks sosial media */
+    font-size: 1.2rem; /* Mengatur ukuran teks */
+    font-weight: bold; /* Mengatur ketebalan teks */
+    display: flex; /* Mengatur tata letak dalam bentuk flexbox agar mudah disesuaikan */
+    flex-direction: column; /* Membuat kolom untuk gambar dan teks judul sosial media */
+    align-items: center; /* Mengatur tata letak item seperti gambar dan judul agar berada di tengah */
+    transition: transform 0.3s ease; /* Membuat animasi hover lebih smooth */
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    transform: scale(1.1); /* Membuat animasi hover agar gambar membesar ketika kursor diarahkan */
+}
+
+.social-links img { /* element img dalam social-links */
+    margin-bottom: 15px; /* Memberikan jarak 15px ke bawah dari setiap gambar */
+    width: 50px; /* Mengatur lebar gambar menjadi 50px */
+    height: 50px; /* Mengatur tinggi gambar menjadi 50px */
+}
+
+.sosials{
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.notification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    z-index: 1000;
+    display: none;
+}
+
+.notification.show {
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.notification-card {    
+    width: 80%;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.notification-card.success {
+    background: white;
+    border-top: 5px solid #4CAF50;
+}
+
+.notification-card.error {
+    background: white;
+    border-top: 5px solid #f44336;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 14px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.btn-success, .btn-error {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-success {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-error {
+    background-color: #f44336;
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
